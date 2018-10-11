@@ -7,4 +7,8 @@
           password: $GCLOUD_SA_JSON
 -}
 
-{}
+    let Auth   = ./Docker/Auth.dhall
+in
+{ image : Text
+, auth  : Optional Auth
+}

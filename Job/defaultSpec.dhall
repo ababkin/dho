@@ -1,11 +1,10 @@
 
     let Step   = ../Step.dhall
 in  let Env    = ../Env.dhall
-in  let Docker = ../Docker.dhall
+in  let DockerContainer = ../DockerContainer.dhall
 in
-{
-  steps             = ([] : List Step)
+{ steps             = ([] : List Step)
 , environment       = ([] : Optional Env)
 , working_directory = ([] : Optional Text)
-, docker            = ([] : Optional Docker)
+, docker            = ([] : Optional (List DockerContainer))
 }
