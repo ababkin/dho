@@ -14,16 +14,20 @@ in  let Env    = ./Env.dhall
 in  let Auth   = ./Docker/Auth.dhall
 in  let DockerContainer = ./DockerContainer.dhall
 
+in  let Some = ./Util/Some.dhall
+
+
+-- top level config --
 
 in  let containers1 = [ defaultContainer "myimage1"
-                      , defaultContainer "myimage2" // { auth = [{ username = "foo" , password = "bar" }] : Optional Auth }
+                      , defaultContainer "myimage2" // { auth = Some Auth { username = "foo" , password = "bar" } }
                       ]
 
 in  let job1 = job "job1" (defaultJobSpec // {
                   steps = [ checkoutStep
                           , runStep "mydir" "mycommand"
                           ]
-                , docker = ([ containers1 ] : Optional (List DockerContainer))
+                , docker = Some (List DockerContainer) containers1
                 })
 
 in

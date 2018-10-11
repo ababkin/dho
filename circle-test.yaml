@@ -1,0 +1,17 @@
+jobs:
+  job1:
+    environment: null
+    steps:
+    - checkout
+    - run:
+        command: mycommand
+        working_directory: mydir
+    docker:
+    - image: myimage1
+      auth: null
+    - image: myimage2
+      auth:
+        username: foo
+        password: bar
+    working_directory: null
+version: 2

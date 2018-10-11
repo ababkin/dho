@@ -1,8 +1,11 @@
 
     let Auth    = ./Auth.dhall
 in  let DockerContainer = ../DockerContainer.dhall
+
+in  let None = ../Util/None.dhall
+
 in
-\(img : Text) -> (
+\(img : Text) ->
   { image = img
-  , auth  = ([] : Optional Auth)
-  } : DockerContainer)
+  , auth  = None Auth
+  } : DockerContainer
