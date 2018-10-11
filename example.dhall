@@ -1,10 +1,8 @@
-    let Job         = ./Job.dhall
-in  let Root        = ./Root.dhall
-in  let Step        = ./Step.dhall
+    let Root        = ./Root.dhall
 in  let RunStep     = ./Step/RunStep.dhall
 
+in  let job           = ./Job/job.dhall
 
-in  let job     = ./Job/job.dhall
 in  let checkoutStep  = ./Step/checkout.dhall
 in  let runStep       = ./Step/run.dhall
 
