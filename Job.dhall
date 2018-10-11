@@ -1,5 +1,7 @@
-    let Step     = ./Step.dhall
+    let Step    = ./Step.dhall
+in  let JobSpec = ./Job/Spec.dhall
 in
 { mapKey : Text
-, mapValue : { steps : List Step }
+, mapValue : JobSpec
+
 }

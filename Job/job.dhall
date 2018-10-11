@@ -1,7 +1,8 @@
-    let Job         = ../Job.dhall
-in  let Step        = ../Step.dhall
+    let Job     = ../Job.dhall
+in  let JobSpec = ./Spec.dhall
 
 in  let job  =
-  \(name : Text) -> \(ss : List Step) -> ({ mapKey = name, mapValue = { steps = ss } } : Job)
-
+  \(name : Text) ->
+  \(js : JobSpec) ->
+    ({ mapKey = name, mapValue = js } : Job)
 in job
