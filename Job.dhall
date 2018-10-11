@@ -1,3 +1,5 @@
-    let RenderedStep     = ./Step/RenderedStep.dhall
-in  { steps : List RenderedStep }
-
+    let Step     = ./Step.dhall
+in
+{ mapKey : Text
+, mapValue : { steps : List Step }
+}

@@ -1,5 +1,5 @@
-    let RenderedJob = ./Job/RenderedJob.dhall
+    let Job = ./Job.dhall
 in
 { version : Natural
-, jobs : List RenderedJob
+, jobs : List Job
 }
