@@ -4,8 +4,6 @@ in  let Env    = ../Env.dhall
 in  let DockerContainer = ../DockerContainer.dhall
 in  let Spec = ./Spec.dhall
 
-in  let None = ../Util/None.dhall
-
 in
 { steps             = [] : List Step
 , environment       = None Env
